@@ -100,6 +100,29 @@
     input[type="submit"]:hover {
       background-color: #ff4081;
     }
+
+    /* Navigation buttons */
+    .nav-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-btn {
+      background-color: #ff80ab;
+      color: white;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #ff4081;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -154,6 +177,11 @@
 
       <input type="submit" value="Submit">
     </form>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="page4.html" class="nav-btn">Back</a>
+    <a href="page6.html" class="nav-btn">Next</a>
   </div>
 
   <script>
