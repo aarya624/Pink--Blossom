@@ -100,29 +100,6 @@
     input[type="submit"]:hover {
       background-color: #ff4081;
     }
-
-    /* Navigation buttons */
-    .nav-buttons {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .nav-btn {
-      background-color: #ff80ab;
-      color: white;
-      text-decoration: none;
-      padding: 10px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .nav-btn:hover {
-      background-color: #ff4081;
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
@@ -152,16 +129,17 @@
     <h2>Crochet Feedback Form</h2>
     <p>Help Aarya know what you would love to see next</p>
 
-    <form id="voteForm">
+    <!-- Updated form to send submissions to your email -->
+    <form action="https://formsubmit.co/aaryashetty18@gmail.com" method="POST">
       <label>Do you think I should sell my crochet projects</label>
-      <select id="sellChoice" required>
+      <select name="sellChoice" required>
         <option value="">Select an option</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
       </select>
 
       <label>What type of projects do you prefer</label>
-      <select id="projectType" required>
+      <select name="projectType" required>
         <option value="">Select a type</option>
         <option value="Plushies">Plushies</option>
         <option value="Keychains">Keychains</option>
@@ -170,35 +148,17 @@
       </select>
 
       <label>What should my next video be about</label>
-      <textarea id="nextVideo" rows="3" placeholder="Example keychain tutorial or home decor" required></textarea>
+      <textarea name="nextVideo" rows="3" placeholder="Example keychain tutorial or home decor" required></textarea>
 
       <label>Your Name</label>
-      <input type="text" id="voterName" placeholder="Enter your name" required>
+      <input type="text" name="voterName" placeholder="Enter your name" required>
+
+      <!-- Optional: redirect to thank-you page -->
+      <input type="hidden" name="_next" value="https://aarya624.github.io/thank-you.html">
+      <input type="hidden" name="_captcha" value="false">
 
       <input type="submit" value="Submit">
     </form>
   </div>
-
-  <div class="nav-buttons">
-    <a href="page4.html" class="nav-btn">Back</a>
-    <a href="page6.html" class="nav-btn">Next</a>
-  </div>
-
-  <script>
-    document.getElementById("voteForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const name = document.getElementById("voterName").value.trim();
-      const sellChoice = document.getElementById("sellChoice").value;
-      const projectType = document.getElementById("projectType").value;
-      const nextVideo = document.getElementById("nextVideo").value.trim();
-
-      if (name && sellChoice && projectType && nextVideo) {
-        alert("Thank you for your feedback " + name + ".");
-        this.reset();
-      } else {
-        alert("Please fill out all fields.");
-      }
-    });
-  </script>
 </body>
 </html>
