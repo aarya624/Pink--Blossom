@@ -129,7 +129,7 @@
     <h2>Crochet Feedback Form</h2>
     <p>Help Aarya know what you would love to see next</p>
 
-    <!-- Updated form to send submissions to your email -->
+    <!-- Formsubmit-ready form -->
     <form action="https://formsubmit.co/aaryashetty18@gmail.com" method="POST">
       <label>Do you think I should sell my crochet projects</label>
       <select name="sellChoice" required>
@@ -153,9 +153,10 @@
       <label>Your Name</label>
       <input type="text" name="voterName" placeholder="Enter your name" required>
 
-      <!-- Optional: redirect to thank-you page -->
-      <input type="hidden" name="_next" value="https://aarya624.github.io/thank-you.html">
+      <!-- Disable captcha -->
       <input type="hidden" name="_captcha" value="false">
+      <!-- Redirect to a thank-you page after submission (optional) -->
+      <input type="hidden" name="_next" value="https://aarya624.github.io/thank-you.html">
 
       <input type="submit" value="Submit">
     </form>
