@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 5 Crochet Poll</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fffaf5, #ffe6ef);
+      font-family: Poppins, Arial, sans-serif;
+      text-align: center;
+      color: #444;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ff80ab;
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .message-box {
+      background-color: #fff0f5;
+      border: 2px solid #ff80ab;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+      box-shadow: 0 3px 10px rgba(255, 182, 193, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .message-box:hover {
+      transform: scale(1.02);
+    }
+
+    .new-message {
+      background-color: #ff80ab;
+      color: white;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 10px;
+      animation: flash 1.5s ease-in-out infinite;
+    }
+
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .poll-section {
+      background-color: #fff7fb;
+      border: 2px solid #ff80ab;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(255, 182, 193, 0.4);
+    }
+
+    .poll-section h2 {
+      color: #ff80ab;
+      margin-bottom: 10px;
+      font-size: 1.6em;
+    }
+
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    select, input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1.5px solid #ff80ab;
+      border-radius: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      font-family: Poppins, Arial, sans-serif;
+      background-color: #fffafc;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    input[type="submit"] {
+      background-color: #ff80ab;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff4081;
+    }
+  </style>
+</head>
+<body>
+  <h1>Things to Crochet</h1>
+
+  <div class="message-box">
+    <div class="new-message">New Message</div>
+    <p>Today I added a new crochet idea with small colorful squares that can be stitched together for blankets bags or pillow covers. Add your own patterns and colors.</p>
+  </div>
+
+  <div class="message-box">
+    <div class="new-message">New Message</div>
+    <p>Another idea is to crochet soft animal figures. They can be lovely gifts or decoration pieces for your space.</p>
+  </div>
+
+  <div class="message-box">
+    <div class="new-message">New Message</div>
+    <p>For autumn colors try beige and off white together. It creates a warm and calm tone for your projects.</p>
+  </div>
+
+  <div class="message-box">
+    <div class="new-message">New Message</div>
+    <p>A new video is coming soon with a fresh crochet idea. Stay tuned.</p>
+  </div>
+
+  <div class="poll-section">
+    <h2>Crochet Feedback Form</h2>
+    <p>Help Aarya know what you would love to see next</p>
+
+    <form id="voteForm">
+      <label>Do you think I should sell my crochet projects</label>
+      <select id="sellChoice" required>
+        <option value="">Select an option</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label>What type of projects do you prefer</label>
+      <select id="projectType" required>
+        <option value="">Select a type</option>
+        <option value="Plushies">Plushies</option>
+        <option value="Keychains">Keychains</option>
+        <option value="Home Decor">Home Decor</option>
+        <option value="Wearables">Wearables</option>
+      </select>
+
+      <label>What should my next video be about</label>
+      <textarea id="nextVideo" rows="3" placeholder="Example keychain tutorial or home decor" required></textarea>
+
+      <label>Your Name</label>
+      <input type="text" id="voterName" placeholder="Enter your name" required>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("voteForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("voterName").value.trim();
+      const sellChoice = document.getElementById("sellChoice").value;
+      const projectType = document.getElementById("projectType").value;
+      const nextVideo = document.getElementById("nextVideo").value.trim();
+
+      if (name && sellChoice && projectType && nextVideo) {
+        alert("Thank you for your feedback " + name + ".");
+        this.reset();
+      } else {
+        alert("Please fill out all fields.");
+      }
+    });
+  </script>
+</body>
+</html>
